@@ -3043,17 +3043,25 @@
             document.querySelector('.loading').style.display = 'none';
         });
     </script> -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function () {
-            OneSignal.init({
-                appId: "a12b2313-6666-4e3e-974c-e1d62f27056b"
-            });
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+<script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+        OneSignal.init({
+            appId: "a12b2313-6666-4e3e-974c-e1d62f27056b"
         });
-                window.addEventListener('load', () => {
-                        document.querySelector('.loading').style.display = 'none';
-                    });
-    </script>
+
+        // ✅ Login the user with external user ID
+        OneSignal.setExternalUserId("1234567890Website").then(function () {
+            console.log("✅ OneSignal login success");
+        }).catch(function (error) {
+            console.error("❌ OneSignal login failed:", error);
+        });
+    });
+
+    window.addEventListener('load', () => {
+        document.querySelector('.loading').style.display = 'none';
+    });
+</script>
 </body>
 </html>
