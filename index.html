@@ -3052,11 +3052,13 @@
         });
 
         // ✅ Login the user with external user ID
-        OneSignal.setExternalUserId("1234567890Website").then(function () {
-            console.log("✅ OneSignal login success");
-        }).catch(function (error) {
-            console.error("❌ OneSignal login failed:", error);
-        });
+          OneSignal.setExternalUserId("1234567890");
+           console.log("✅ OneSignal login success$");
+        // OneSignal.setExternalUserId("1234567890Website").then(function () {
+        //     console.log("✅ OneSignal login success");
+        // }).catch(function (error) {
+        //     console.error("❌ OneSignal login failed:", error);
+        // });
     });
 
     window.addEventListener('load', () => {
